@@ -3,7 +3,8 @@
 AdaptivFloat is a floating-point inspired number representation format for deep learning that dynamically maximizes and optimally clips its available dynamic range, at a layer granularity, in order to create faithful encoding of neural network parameters. AdaptivFloat consistently produces higher inference accuracies compared to block floating-point, uniform, IEEE-like float or posit encodings at very low precision ($\leq$ 8-bit) across a diverse set of state-of-the-art neural network topologies.
 
 Impact of weight bit compression post-training quantization / post-quantization aware retraining on the Transformer model. More results on the paper (see reference below)
-| <td colspan=5>BLEU Score of Transformer (BLEU @ FP32=27.4) | 
+
+| <td colspan=5>BLEU Score of Transformer (BLEU @ FP32=27.4)                                                    | 
 |-------|:--------------------------------------------:|:-----------:|:-----------:|:-----------:|:------------:|
 | #Bits |                     Float                    |     BFP     |   Uniform   |    Posit    | AdaptivFloat |
 | 16    |                  27.4 / 27.4                 | 27.4 / 27.4 | 27.4 / 27.4 | 27.4 / 27.5 |  27.4 / 27.6 |
