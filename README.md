@@ -4,7 +4,7 @@ AdaptivFloat is a floating-point inspired number representation format for deep 
 
 <img src="images/adf_github.png" width="820" height="250">
 
-AdaptivFloat consistently produces higher inference accuracies compared to block floating-point, uniform, IEEE-like float or posit encodings at very low precision (&le; 8-bit) across a diverse set of state-of-the-art neural network topologies.
+AdaptivFloat consistently produces higher inference accuracies compared to block floating-point, uniform, IEEE-like float or posit encodings at low precision (&le; 8-bit) across a diverse set of state-of-the-art neural network topologies.
 
 The table below shows the impact of weight bit compression on the BLEU score (WMT'17 En-to-De) of the Transformer model post-training quantization / post-quantization aware retraining. More results on the paper (see reference below):
 
