@@ -24,6 +24,7 @@ It can be easily invoked in any ML framework (PyTorch, TensorFlow, etc.) with a 
 
 ```python
 import torch
+import numpy
 from adaptivfloat import quantize_adaptivfloat
 
 for parameter in self.model.named_parameters():
