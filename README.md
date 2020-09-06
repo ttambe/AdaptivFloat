@@ -2,7 +2,7 @@
 
 AdaptivFloat is a floating-point inspired number representation format for deep learning that dynamically maximizes and optimally clips its available dynamic range, at a layer granularity, in order to create faithful encoding of neural network parameters.
 
-<img src="images/adf_github.png" width="800" height="250">
+<img src="images/adf_github.png" width="820" height="250">
 
 AdaptivFloat consistently produces higher inference accuracies compared to block floating-point, uniform, IEEE-like float or posit encodings at very low precision ($\leq$ 8-bit) across a diverse set of state-of-the-art neural network topologies.
 
