@@ -14,6 +14,15 @@ Impact of weight bit compression post-training quantization / post-quantization 
 | 5     |                  24.2 / 25.6                 |  0.0 / 0.0  |  0.0 / 0.0  | 25.8 / 26.6 |  26.4 / 27.3 |
 | 4     |                   0.0 / 0.0                  |  0.0 / 0.0  |  0.0 / 0.0  |  0.0 / 0.0  |  16.3 / 25.5 |
 
+| GPU    | Mode | Time (2nd epoch) | Val Acc (3 runs) |
+| --------- | -------- | ----------------------- | ----------------------|
+| Titan V | FP32 | 41s | 0.8438/0.8281/0.8333 |
+| Titan V | AMP | 26s | 0.8281/0.8568/0.8411 |
+| V100    | FP32 | 35s | 0.8646/0.8359/0.8464 |
+| V100    | AMP | 22s | 0.8646/0.8385/0.8411 |
+| 1080 Ti | FP32 | 55s | - |
+
+
 ## Algorithm
 
 The base algorithm can be found in the adaptvfloat.py file
