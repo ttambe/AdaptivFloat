@@ -20,6 +20,17 @@ The table below shows the impact of weight bit compression on the BLEU score (WM
 ## Algorithm
 
 The base algorithm can be found in the script [`adaptivfloat.py`](https://github.com/ttambe/AdaptivFloat/blob/master/adaptivfloat.py).
+It can be easily invoked in any ML framework (PyTorch, TensorFlow, etc.) with a Python backend. The example below shows how one can quantize DNN layers' weights to AdaptivFloat format in PyTorch. The user needs to be specify the desired quantization bit width of the tensor `f_bits` and the number of floating-point exponent bits `f_exp`.
+
+```python
+import torch
+from adaptivfloat import quantize_adaptivfloat
+
+for parameter in self.model.named_parameters():
+    params_np = parameter.cpu().data.numpy()
+    params_adaptivfloat = quantize_adaptivfloat(params_np, self.f_bits, self.f_exp, bias = None)
+    parameter.data = torch.from_numpy(params_adaptivfloat).float().cuda()
+```
 
 ## Citation
 

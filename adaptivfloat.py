@@ -2,7 +2,7 @@
 
 import numpy as np
 
-def quantize_floatext(float_arr, n_bits=8, n_exp=4, bias = None):
+def quantize_adaptivfloat(float_arr, n_bits=8, n_exp=4, bias = None):
     n_mant = n_bits-1-n_exp
     
     # 1. store sign value and do the following part as unsigned value
