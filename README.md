@@ -2,7 +2,7 @@
 
 AdaptivFloat is a floating-point inspired number representation format for deep learning that dynamically maximizes and optimally clips its available dynamic range, at a layer granularity, in order to create faithful encoding of neural network parameters.
 
-<img src="images/adaptivfloat_quant_pic.png" width="600" height="500">
+<img src="images/adaptivfloat_quant_pic.png" width="800" height="250">
 
 AdaptivFloat consistently produces higher inference accuracies compared to block floating-point, uniform, IEEE-like float or posit encodings at very low precision ($\leq$ 8-bit) across a diverse set of state-of-the-art neural network topologies.
 
@@ -19,7 +19,7 @@ The table below shows the impact of weight bit compression on the BLEU score of 
 
 ## Algorithm
 
-The base algorithm can be found on the script [`adaptivfloat.py`] file
+The base algorithm can be found in the script [`adaptivfloat.py`](https://github.com/ttambe/AdaptivFloat/blob/master/adaptivfloat.py).
 
 ## Citation
 
