@@ -1,4 +1,4 @@
-#Reference paper: https://arxiv.org/pdf/1909.13271.pdf
+#Reference paper: https://arxiv.org/pdf/1909.13271.pdf (T. Tambe et al.)
 
 import numpy as np
 

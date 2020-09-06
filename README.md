@@ -1,12 +1,15 @@
 ##AdaptivFloat: A Floating-Point Based Data Type for Resilient Deep Learning Inference
 
-AdaptivFloat is a floating-point inspired number representation format for deep learning that dynamically maximizes and optimally clips its available dynamic range, at a layer granularity, in order to create faithful encoding of neural network parameters. AdaptivFloat consistently produces higher inference accuracies compared to block floating-point, uniform, IEEE-like float or posit encodings at very low precision ($\leq$ 8-bit) across a diverse set of state-of-the-art neural network topologies.
+AdaptivFloat is a floating-point inspired number representation format for deep learning that dynamically maximizes and optimally clips its available dynamic range, at a layer granularity, in order to create faithful encoding of neural network parameters.
 
-Impact of weight bit compression post-training quantization / post-quantization aware retraining on the Transformer model. More results on the paper (see reference below):
+<img src="images/adaptivfloat_quant_pic.png" width="600" height="500">
 
-| <td colspan=5>BLEU Score of Transformer (BLEU @ FP32=27.4)                                                    | 
+AdaptivFloat consistently produces higher inference accuracies compared to block floating-point, uniform, IEEE-like float or posit encodings at very low precision ($\leq$ 8-bit) across a diverse set of state-of-the-art neural network topologies.
+
+The table below shows the impact of weight bit compression on the BLEU score of the Transformer model post-training quantization / post-quantization aware retraining. More results on the paper (see reference below):
+
+| # Bits |                     Float                    |     BFP     |   Uniform   |    Posit    | AdaptivFloat |
 |-------|:--------------------------------------------:|:-----------:|:-----------:|:-----------:|:------------:|
-| #Bits |                     Float                    |     BFP     |   Uniform   |    Posit    | AdaptivFloat |
 | 16    |                  27.4 / 27.4                 | 27.4 / 27.4 | 27.4 / 27.4 | 27.4 / 27.5 |  27.4 / 27.6 |
 | 8     |                  27.2 / 27.5                 | 26.3 / 27.3 | 27.3 / 27.4 | 27.3 / 27.5 |  27.3 / 27.7 |
 | 7     |                  27.1 / 27.5                 | 16.9 / 26.8 | 26.0 / 27.2 | 27.3 / 27.4 |  27.3 / 27.7 |
@@ -14,28 +17,20 @@ Impact of weight bit compression post-training quantization / post-quantization 
 | 5     |                  24.2 / 25.6                 |  0.0 / 0.0  |  0.0 / 0.0  | 25.8 / 26.6 |  26.4 / 27.3 |
 | 4     |                   0.0 / 0.0                  |  0.0 / 0.0  |  0.0 / 0.0  |  0.0 / 0.0  |  16.3 / 25.5 |
 
-| GPU    | Mode | Time (2nd epoch) | Val Acc (3 runs) |
-| --------- | -------- | ----------------------- | ----------------------|
-| Titan V | FP32 | 41s | 0.8438/0.8281/0.8333 |
-| Titan V | AMP | 26s | 0.8281/0.8568/0.8411 |
-| V100    | FP32 | 35s | 0.8646/0.8359/0.8464 |
-| V100    | AMP | 22s | 0.8646/0.8385/0.8411 |
-| 1080 Ti | FP32 | 55s | - |
-
-
 ## Algorithm
 
-The base algorithm can be found in the adaptvfloat.py file
+The base algorithm can be found on the script [`adaptivfloat.py`] file
 
 ## Citation
 
 If you find this resource useful, please consider citing the following paper:
 
 ```
-@INPROCEEDINGS{ttambe2020adaptivfloat,
-    title={Algorithm-Hardware Co-Design of Adaptive Floating-Point Encodings for Resilient Deep Learning Inference},
-    author={Thierry Tambe and En-Yu Yang and Zishen Wan and Y. Deng and V. Reddi and Alexander M. Rush and D. Brooks and Gu-Yeon Wei},
-    booktitle={2020 57th ACM/IEEE Design Automation Conference (DAC)}, 
-    year={2020},
+@article{Tambe2019AdaptivFloatAF,
+  title={AdaptivFloat: A Floating-point based Data Type for Resilient Deep Learning Inference},
+  author={Thierry Tambe and En-Yu Yang and Zishen Wan and Y. Deng and V. Reddi and Alexander M. Rush and D. Brooks and Gu-Yeon Wei},
+  journal={ArXiv},
+  year={2019},
+  volume={abs/1909.13271}
 }
 ```
